@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="数字化与人工智能课程：通过 LLM-Wiki 搭建个人知识库">
+  <title>通过 LLM-Wiki 搭建个人知识库 | 数字化与人工智能课程</title>
+  <link rel="icon" type="image/png" href="public/images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-brand">
+          <img src="public/images/logo.png" alt="同济大学建筑设计研究院（集团）有限公司 TJAD 标志" class="hero-logo">
+          <div class="hero-brand-text">
+            <span class="hero-brand-name">数字化与人工智能课程</span>
+            <span class="hero-brand-org">同济大学建筑设计研究院（集团）有限公司</span>
+          </div>
+        </div>
+        <h1 class="hero-title">通过 <span class="accent">LLM-Wiki</span><br>搭建个人知识库</h1>
+        <p class="hero-desc">把 Karpathy 的知识库方法论，变成每个人都能上手的工程实践——让 AI 替你整理、关联、沉淀知识，让收藏不再等于遗忘。</p>
+        <div class="hero-cta">
+          <a href="#sec-1" class="btn btn-primary">开始学习</a>
+        </div>
+      </div>
+      <figure class="hero-figure slide" data-full="public/images/full/总览图.png">
+        <img src="public/images/thumb/总览图.webp" alt="LLM-Wiki 课程总览图" loading="eager">
+        <figcaption>24 页课程内容总览 · 点击放大</figcaption>
+      </figure>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>向下滚动</span>
+      <span class="arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- ============ 内容区 ============ -->
+  <div class="content">
+
+  <!-- ----- 小节：知识与困境 ----- -->
+  <section class="sec" id="sec-1">
+    <h2 class="sec-title">当收藏变成遗忘</h2>
+    <p class="sec-intro">信息过载的时代，我们需要的不只是存储，而是一种让知识持续生长的方式。LLM-Wiki 正是为此而生的一套方法论。</p>
+
+    <div class="cards">
+      <!-- P01 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P01_知识的困境.png">
+          <span class="slide-no">P01</span>
+          <img src="public/images/thumb/P01_知识的困境.webp" alt="P01 知识的困境" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>知识的困境</h3>
+          <p>我们每天都在收藏文章、下载资料，可真正留在脑子里的却越来越少。资料越堆越高，知识却没有积累——这是几乎所有现代人都面临的困境。</p>
+          <ul class="points">
+            <li><b>信息过载</b>：每天涌入的内容远超大脑处理能力。</li>
+            <li><b>检索割裂</b>：传统搜索只能找回片段，看不到关联。</li>
+            <li><b>缺乏沉淀</b>：每次提问都从零开始，不复用过往。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P02 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P02_LLM-Wiki的定义.png">
+          <span class="slide-no">P02</span>
+          <img src="public/images/thumb/P02_LLM-Wiki的定义.webp" alt="P02 LLM-Wiki 的定义" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>什么是 LLM-Wiki</h3>
+          <p>LLM-Wiki = LLM + Wiki。它借助大语言模型，把零散原始资料自动整理成结构化、可检索的知识库，让"数据库"升级为真正的"知识库"。</p>
+          <ul class="points">
+            <li><b>从存储到理解</b>：不只保存资料，更读懂资料。</li>
+            <li><b>从原料到结构</b>：自动生成摘要、实体与关联。</li>
+            <li><b>是一套框架方法论</b>，而非某项新技术。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：核心理念 ----- -->
+  <section class="sec">
+    <h2 class="sec-title">核心思想：把 LLM 当作编译器</h2>
+    <p class="sec-intro">LLM-Wiki 的精髓在于"编译"二字——让大模型像编译器一样，把原始资料加工成可复用的知识资产。</p>
+
+    <div class="cards">
+      <!-- P03 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P03_LLM-Wiki的核心理念.png">
+          <span class="slide-no">P03</span>
+          <img src="public/images/thumb/P03_LLM-Wiki的核心理念.webp" alt="P03 核心理念" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>核心理念：LLM 即编译器</h3>
+          <p>把 LLM 当作一台"知识编译器"：它读取原始资料，理解、生成、结构化，最终把零散信息编译成可复用的知识网络。</p>
+          <ul class="points">
+            <li><b>增量编译</b>：资料越多，知识越完整。</li>
+            <li><b>规则约束</b>：用 Schema 把控产出质量。</li>
+            <li>让信息从"散落"变为"可用"。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P04 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P04_创作者AndrejKarpathy.png">
+          <span class="slide-no">P04</span>
+          <img src="public/images/thumb/P04_创作者AndrejKarpathy.webp" alt="P04 Karpathy" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>方法论提出者：Karpathy</h3>
+          <p>Andrej Karpathy，深度学习领域最具影响力的实践者之一，也是 LLM-Wiki 思想的核心来源。</p>
+          <ul class="points">
+            <li>OpenAI 创始团队成员。</li>
+            <li>前 Tesla AI 总监，主导 Autopilot 自动驾驶。</li>
+            <li>Stanford CS231n 深度学习课程创立者。</li>
+            <li>活跃的开源与科普作者。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：三层架构 ----- -->
+  <section class="sec">
+    <h2 class="sec-title">三层架构：资料 · 知识 · 规则</h2>
+    <p class="sec-intro">LLM-Wiki 的骨架由三层构成，各司其职、形成闭环。理解这三层，就理解了整个体系的运作逻辑。</p>
+
+    <div class="cards">
+      <!-- P05 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P05_三层架构总体介绍.png">
+          <span class="slide-no">P05</span>
+          <img src="public/images/thumb/P05_三层架构总体介绍.webp" alt="P05 三层架构总览" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>三层架构总览</h3>
+          <p>整个体系由三层构成，数据自下而上流动，规则自上而下约束，形成一个自我进化的闭环。</p>
+          <ul class="points">
+            <li><b class="c-raw">Raw 层</b>　原始资料（只读）</li>
+            <li><b class="c-wiki">Wiki 层</b>　知识库（LLM 维护）</li>
+            <li><b class="c-schema">Schema 层</b>　规则（共同维护）</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P06 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P06_Raw层.png">
+          <span class="slide-no">P06</span>
+          <img src="public/images/thumb/P06_Raw层.webp" alt="P06 Raw 层" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Raw 层：原始资料的基石</h3>
+          <p>知识库的地基。所有原始素材汇入此处，作为整个体系的输入源——越丰富，上层知识越可靠。</p>
+          <ul class="points">
+            <li>来源：文章、论文、笔记、图片、网页、PDF。</li>
+            <li>用户自主添加，持续扩充。</li>
+            <li><b>只读保护区</b>：LLM 只读不写，保证源可信。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P07 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P07_Wiki层.png">
+          <span class="slide-no">P07</span>
+          <img src="public/images/thumb/P07_Wiki层.webp" alt="P07 Wiki 层" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Wiki 层：知识的中枢</h3>
+          <p>LLM 在此生成网络化的知识内容，把原始资料加工成可检索、可复用的结构。</p>
+          <ul class="points">
+            <li><b>摘要</b>：提炼核心要点。</li>
+            <li><b>实体</b>：人物、机构、项目。</li>
+            <li><b>概念</b>：抽象定义与相互关系。</li>
+            <li><b>分析</b>：对比、归纳、推理。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P08 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P08_Schema层.png">
+          <span class="slide-no">P08</span>
+          <img src="public/images/thumb/P08_Schema层.webp" alt="P08 Schema 层" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Schema 层：规则的骨架</h3>
+          <p>定义知识库"长什么样"的规则层，是整个体系的骨架和目录，约束 LLM 的产出格式。</p>
+          <ul class="points">
+            <li>定义目录结构与命名规范。</li>
+            <li>约定生成流程与质量标准。</li>
+            <li>由 LLM 与用户<b>共同维护</b>。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：核心操作 ----- -->
+  <section class="sec">
+    <h2 class="sec-title">三个动作：摄入 · 问答 · 体检</h2>
+    <p class="sec-intro">架构搭好后，日常使用围绕三个动作展开，覆盖知识库的输入、输出与维护全生命周期。</p>
+
+    <div class="cards">
+      <!-- P09 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P09_核心操作总体介绍.png">
+          <span class="slide-no">P09</span>
+          <img src="public/images/thumb/P09_核心操作总体介绍.webp" alt="P09 核心操作总览" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>核心操作总览</h3>
+          <p>日常使用围绕三个动作展开，分别对应知识库的输入、输出和维护，构成完整闭环。</p>
+          <ul class="points">
+            <li><b>Ingest 摄入</b>（输入）：资料 → 知识。</li>
+            <li><b>Query 问答</b>（输出）：提问 → 答案。</li>
+            <li><b>Lint 体检</b>（维护）：检查 → 优化。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P10 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P10_Ingest摄入.png">
+          <span class="slide-no">P10</span>
+          <img src="public/images/thumb/P10_Ingest摄入.webp" alt="P10 Ingest 摄入" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Ingest 摄入</h3>
+          <p>把资料"喂"进知识库的过程。每添加一份原始文件，LLM 就读取、提取、更新一次 Wiki 层。</p>
+          <ul class="points">
+            <li>添加文件到 raw 目录即触发。</li>
+            <li>LLM 自动提取要点并建立关联。</li>
+            <li><b>每次摄入都是一次知识迭代</b>。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P11 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P11_Query问答.png">
+          <span class="slide-no">P11</span>
+          <img src="public/images/thumb/P11_Query问答.webp" alt="P11 Query 问答" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Query 问答</h3>
+          <p>直接在知识库上提问。LLM 基于已结构化的知识作答，无需向量数据库、无需 RAG。</p>
+          <ul class="points">
+            <li>提问 → LLM 索引 Wiki 层 → 综合回答。</li>
+            <li>高质量问答可反哺知识库积累。</li>
+            <li>回答有据可查，可追溯来源。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P12 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P12_Lint体检.png">
+          <span class="slide-no">P12</span>
+          <img src="public/images/thumb/P12_Lint体检.webp" alt="P12 Lint 体检" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Lint 体检</h3>
+          <p>定期给知识库做"健康检查"。LLM 遍历全库，发现并修复问题，输出体检报告。</p>
+          <ul class="points">
+            <li>查找<b>孤立、冲突、过期</b>的内容。</li>
+            <li>通过健康度指标（HScore）量化评估。</li>
+            <li>根据反馈同步优化 Schema 规则。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：为何不需要 RAG ----- -->
+  <section class="sec">
+    <h2 class="sec-title">为什么它不需要 RAG</h2>
+    <p class="sec-intro">传统 RAG 靠向量检索，LLM-Wiki 靠结构化加载。两种思路，带来准确度与可控性的根本差异。</p>
+
+    <div class="cards">
+      <!-- P13 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P13_不需要RAG原理.png">
+          <span class="slide-no">P13</span>
+          <img src="public/images/thumb/P13_不需要RAG原理.webp" alt="P13 不需要 RAG 原理" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>不用 RAG 的原理</h3>
+          <p>传统 RAG 先检索再生成，可能丢失上下文；LLM-Wiki 直接全量加载知识库，准确度与可控性更高。</p>
+          <ul class="points">
+            <li><b>传统 RAG</b>：检索 → 注入 → 生成（易失真）。</li>
+            <li><b>LLM-Wiki</b>：全量加载 → 直接生成（更准确）。</li>
+            <li>关键在 <code>index.md</code> 与 <code>log.md</code>。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P14 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P14_index.md.png">
+          <span class="slide-no">P14</span>
+          <img src="public/images/thumb/P14_index.md.webp" alt="P14 index.md" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>index.md：知识库的门面</h3>
+          <p>整个知识库的导航枢纽。每个 Wiki 页面占一行，LLM 回答问题前先读取它来定位。</p>
+          <ul class="points">
+            <li>展示全库的知识结构。</li>
+            <li>通过索引快速跳转定位。</li>
+            <li>是问答检索的入口文件。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P15 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P15_log.md.png">
+          <span class="slide-no">P15</span>
+          <img src="public/images/thumb/P15_log.md.webp" alt="P15 log.md" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>log.md：操作的黑匣子</h3>
+          <p>按时间顺序记录每次摄入、查询、体检的操作，让知识库的变更历史可回溯。</p>
+          <ul class="points">
+            <li>记录每次 Ingest / Query / Lint。</li>
+            <li>出现问题可快速定位回溯。</li>
+            <li>是知识库的"黑匣子"。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：对比与传统 RAG ----- -->
+  <section class="sec">
+    <h2 class="sec-title">与传统 RAG 的根本差异</h2>
+    <p class="sec-intro">从知识状态到可维护性，LLM-Wiki 在每个维度都展现出不同的哲学。</p>
+
+    <div class="cards">
+      <!-- P16 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P16_LLM-Wiki_vs_传统RAG.png">
+          <span class="slide-no">P16</span>
+          <img src="public/images/thumb/P16_LLM-Wiki_vs_传统RAG.webp" alt="P16 对比传统 RAG" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>四个维度的对比</h3>
+          <p>从知识状态、关联构建、累积效应到可维护性，LLM-Wiki 都展现出"编译型"的优势。</p>
+          <ul class="points">
+            <li><b>知识状态</b>：编译型 vs 解释型。</li>
+            <li><b>关联性</b>：网络链接 vs 即时检索。</li>
+            <li><b>累积效应</b>：迭代更新 vs 无积累。</li>
+            <li><b>可维护性</b>：白盒可追溯 vs 黑盒不可控。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P17 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P17_核心成果的不同.png">
+          <span class="slide-no">P17</span>
+          <img src="public/images/thumb/P17_核心成果的不同.webp" alt="P17 核心成果的不同" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>人机分工的智慧</h3>
+          <p>关键在于分工：把枯燥的整理维护交给 AI，人专注于提供资料与高质量提问。</p>
+          <ul class="points">
+            <li><b>AI 主导</b>：提炼摘要、更新引用、保持一致、检查归档。</li>
+            <li><b>用户主导</b>：收集资料、引导方向、高质量问答、自我提升。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：工具与实操 ----- -->
+  <section class="sec">
+    <h2 class="sec-title">从理论到落地：工具栈</h2>
+    <p class="sec-intro">理念讲完，接下来是实操。四组工具，覆盖从资料收集到本地运行、桌面应用到私有云同步的完整链路。</p>
+
+    <div class="cards">
+      <!-- P18 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P18_Obsidian与WebClipper.png">
+          <span class="slide-no">P18</span>
+          <img src="public/images/thumb/P18_Obsidian与WebClipper.webp" alt="P18 Obsidian 与 Web Clipper" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Obsidian + Web Clipper</h3>
+          <p>Obsidian 是本地优先的 Markdown 笔记软件，承载整个知识库；Web Clipper 是浏览器插件，一键把网页剪藏为 Markdown，汇入 Raw 层。</p>
+          <ul class="points">
+            <li>本地存储，数据完全自主可控。</li>
+            <li>网页 → 笔记的无缝衔接。</li>
+            <li>双链笔记，天然适合知识网络。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P19 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P19_Node.js与OpenCode.png">
+          <span class="slide-no">P19</span>
+          <img src="public/images/thumb/P19_Node.js与OpenCode.webp" alt="P19 Node.js 与 OpenCode" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Node.js + OpenCode</h3>
+          <p>Node.js 提供 JavaScript 运行环境；OpenCode 是开源终端编程智能体，承担 LLM-Wiki 中"读取、提取、增量更新"的执行角色。</p>
+          <ul class="points">
+            <li>为 LLM-Wiki 提供本地运行底座。</li>
+            <li>无需云端依赖，全流程本地完成。</li>
+            <li>开源免费，可自由定制。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P20 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P20_LLM-Wiki桌面端.png">
+          <span class="slide-no">P20</span>
+          <img src="public/images/thumb/P20_LLM-Wiki桌面端.webp" alt="P20 LLM-Wiki 桌面端" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>LLM-Wiki 桌面端</h3>
+          <p>把命令行方案封装为图形化桌面应用，让不熟悉终端的用户也能一键完成摄入、问答与体检。</p>
+          <ul class="points">
+            <li>一键启动，无需命令行配置。</li>
+            <li>本地优先，数据存储在本地。</li>
+            <li>大幅降低上手门槛。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P21 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P21_Qoder_Ollama_Fast-Note-Sync.png">
+          <span class="slide-no">P21</span>
+          <img src="public/images/thumb/P21_Qoder_Ollama_Fast-Note-Sync.webp" alt="P21 Qoder Ollama Fast-Note-Sync" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>Qoder · Ollama · FNS</h3>
+          <p>三件套组成本地 LLM 工作流闭环，适配从日常使用到保密场景的不同需求。</p>
+          <ul class="points">
+            <li><b>Qoder</b>：智能体执行软件，自带知识库，有免费额度。</li>
+            <li><b>Ollama</b>：本地大模型引擎，纯内网，适合保密信息。</li>
+            <li><b>Fast-Note-Sync</b>：搭配 VPS 与域名，跨设备私有云同步。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ----- 小节：边界与升华 ----- -->
+  <section class="sec">
+    <h2 class="sec-title">边界、适用与升华</h2>
+    <p class="sec-intro">再好的方法也有边界。知道它适合什么、不适合什么，才能真正用好它。</p>
+
+    <div class="cards">
+      <!-- P22 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P22_限制与适用场景.png">
+          <span class="slide-no">P22</span>
+          <img src="public/images/thumb/P22_限制与适用场景.webp" alt="P22 限制与适用场景" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>限制与适用场景</h3>
+          <p>LLM-Wiki 依赖高质量、相对稳定的原始资料，因此更适合专题研究而非日常碎记。</p>
+          <ul class="points">
+            <li><b class="c-good">✓ 适合</b>：论文、规范、书籍、审查意见等专题资料。</li>
+            <li><b class="c-bad">✗ 不适合</b>：碎片化笔记、多方向日记、频繁变动数据。</li>
+            <li>核心判断：能否形成<b>互相关联的知识网络</b>。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P23 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P23_道与术的关系.png">
+          <span class="slide-no">P23</span>
+          <img src="public/images/thumb/P23_道与术的关系.webp" alt="P23 道与术的关系" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>「道」与「术」</h3>
+          <p>道是客观存在的规律与法则，术是实际实践的方法与技巧。学技术，更要有学习 AI 的心态。</p>
+          <ul class="points">
+            <li>年初 AI 专班<b>张峥</b>院长分享的见解。</li>
+            <li>个人知识库是<b>定制化、不受限、可发散</b>的。</li>
+            <li>想买都买不到，却能随时迁移与扩展。</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- P24 -->
+      <article class="card">
+        <figure class="card-fig slide" data-full="public/images/full/P24_最终致谢.png">
+          <span class="slide-no">P24</span>
+          <img src="public/images/thumb/P24_最终致谢.webp" alt="P24 致谢" loading="lazy">
+        </figure>
+        <div class="card-body">
+          <h3>致谢</h3>
+          <p>感谢 Karpathy 的启发，感谢开源社区与工具开发者，感谢各位的聆听。</p>
+          <blockquote class="verse">
+            日月不失其体，故蔽而复明<br>
+            江汉不失其源，故穷而复通
+          </blockquote>
+          <p>也感谢专班组长<b>杜明</b>的鼓励，以及自己学习 AI 的初心。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  </div><!-- /content -->
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="public/images/logo.png" alt="TJAD" class="footer-logo">
+      <span>同济大学建筑设计研究院（集团）有限公司 · 数字化与人工智能课程</span>
+    </div>
+    <a href="#hero" class="back-top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<!-- ============ 图片灯箱 ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="关闭">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="下一张">›</button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

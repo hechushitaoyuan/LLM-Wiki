@@ -1,0 +1,36 @@
+# ===== 敏感信息（绝不能提交）=====
+github-Secrets.txt
+*.secret
+*.key
+.env
+.env.*
+
+# ===== 依赖（本地开发用，仓库不需要）=====
+node_modules/
+package-lock.json
+
+# ===== 构建产物 / 压缩包 =====*
+dist/
+build/
+*.zip
+*.tar.gz
+*.7z
+
+# ===== 本地部署包（打包用，不进仓库）=====
+llm-wiki-website-deploy*.zip
+
+# ===== 编辑器 / 系统 =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 日志 / 缓存 =====
+*.log
+__pycache__/
+*.pyc
+.cache/

@@ -1,0 +1,33 @@
+# ===== 敏感信息（绝对不能进镜像）=====
+github-Secrets.txt
+*.secret
+*.key
+.env
+.env.*
+
+# ===== 依赖（镜像里用不上）=====
+node_modules
+npm-debug.log
+package.json
+package-lock.json
+optimize-images.mjs
+
+# ===== CI/部署配置（不进镜像）=====
+.github/
+docker-compose.yml
+
+# ===== 文档（镜像不需要）=====
+*.md
+
+# ===== Git / 系统 =====
+.git
+.gitignore
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 压缩包 / 日志 =====
+*.zip
+*.tar.gz
+*.log
+__pycache__/

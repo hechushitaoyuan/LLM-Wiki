@@ -1,0 +1,25 @@
+# VPS 部署用：直接从 DockerHub 拉取镜像运行，无需在 VPS 上构建
+#
+# 使用方法（在 VPS 上）：
+#   1. 把本文件放到任意目录，例如 /opt/wiki/docker-compose.yml
+#   2. docker compose pull      # 拉取最新镜像
+#   3. docker compose up -d     # 后台启动
+#   4. 访问 http://<VPS公网IP>:8080
+#
+# 更新到新版本：
+#   docker compose pull && docker compose up -d
+#
+# 镜像是私有仓库时，需先登录：
+#   echo "<DOCKERHUB_TOKEN>" | docker login -u jiamian0128 --password-stdin
+
+services:
+  llm-wiki:
+    # 镜像名 = DockerHub用户名/仓库名
+    image: jiamian0128/llm-wiki:latest
+    container_name: llm-wiki
+    restart: unless-stopped
+    ports:
+      - "8080:80"          # 左边宿主机端口(可改)，右边容器内 nginx 端口(勿改)
+    # 如需限制资源：
+    # mem_limit: 256m
+    # cpus: "0.5"

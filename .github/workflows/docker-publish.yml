@@ -1,0 +1,49 @@
+# 构建 Docker 镜像并推送到 DockerHub
+# 触发条件：推送到 main 分支，或手动运行
+#
+# 需要在仓库 Settings → Secrets and variables → Actions 配置：
+#   DOCKERHUB_USERNAME  DockerHub 用户名
+#   DOCKERHUB_TOKEN     DockerHub Access Token（非登录密码）
+
+name: Build & Push Docker Image
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:      # 允许在 GitHub 网页手动触发
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. 登录 DockerHub
+      - name: Log in to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 3. 设置镜像构建上下文元数据（自动生成 tag）
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/llm-wiki
+          tags: |
+            type=raw,value=latest            # 始终有 latest 标签，方便 VPS 拉取
+            type=sha,prefix=,format=short     # 每次构建额外打一个 commit 短哈希标签，便于回溯
+
+      # 4. 构建并推送
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

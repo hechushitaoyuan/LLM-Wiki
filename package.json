@@ -1,0 +1,13 @@
+{
+  "name": "tjad-llm-wiki-course",
+  "version": "1.0.0",
+  "description": "TJAD 数字化课程：通过 LLM-Wiki 搭建个人知识库（静态展示页）",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "optimize": "node optimize-images.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
