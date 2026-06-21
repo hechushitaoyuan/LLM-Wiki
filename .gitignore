@@ -1,7 +1,10 @@
 # ===== 敏感信息（绝不能提交）=====
 github-Secrets.txt
+vps-arm.txt
+vps*.txt
 *.secret
 *.key
+*.pem
 .env
 .env.*
 

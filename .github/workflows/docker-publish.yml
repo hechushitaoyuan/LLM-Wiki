@@ -1,9 +1,12 @@
-# 构建 Docker 镜像并推送到 DockerHub
+# 构建 Docker 镜像（多架构：amd64 + arm64）并推送到 DockerHub
 # 触发条件：推送到 main 分支，或手动运行
 #
 # 需要在仓库 Settings → Secrets and variables → Actions 配置：
 #   DOCKERHUB_USERNAME  DockerHub 用户名
 #   DOCKERHUB_TOKEN     DockerHub Access Token（非登录密码）
+#
+# 说明：目标 VPS 为 ARM 架构，必须构建 arm64 镜像；
+#       同时保留 amd64 以兼容 x86 服务器（如集团内网服务器）。
 
 name: Build & Push Docker Image
 
@@ -21,29 +24,40 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. 登录 DockerHub
+      # 2. 安装 QEMU（跨架构模拟，arm64 在 x86 runner 上构建需要）
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      # 3. 安装 Docker Buildx（多架构构建内核）
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 4. 登录 DockerHub
       - name: Log in to DockerHub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3. 设置镜像构建上下文元数据（自动生成 tag）
+      # 5. 设置镜像标签元数据
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/llm-wiki
           tags: |
-            type=raw,value=latest            # 始终有 latest 标签，方便 VPS 拉取
-            type=sha,prefix=,format=short     # 每次构建额外打一个 commit 短哈希标签，便于回溯
+            type=raw,value=latest            # 始终有 latest，方便 VPS 拉取
+            type=sha,prefix=,format=short     # commit 短哈希标签，便于回溯
 
-      # 4. 构建并推送
-      - name: Build and push
+      # 6. 多架构构建并推送
+      - name: Build and push (amd64 + arm64)
         uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64   # ← 同时构建两种架构
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha                  # GitHub Actions 缓存加速
+          cache-to: type=gha,mode=max
