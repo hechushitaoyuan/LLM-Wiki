@@ -16,6 +16,10 @@ optimize-images.mjs
 .github/
 docker-compose.yml
 
+# ===== Cloudflare 配置（仅 Pages 备用部署用，不进 Docker 镜像）=====
+wrangler.jsonc
+.assetsignore
+
 # ===== 文档（镜像不需要）=====
 *.md
 

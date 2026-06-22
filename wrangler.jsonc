@@ -1,0 +1,21 @@
+// ==========================================================================
+// Cloudflare Pages / Workers Static Assets 配置
+// -------------------------------------------------------------------------
+// 作用：本项目是纯静态站点（HTML/CSS/JS/图片）。
+//      告诉 Wrangler 只把仓库根目录的静态资源当作资源上传，
+//      通过 .assetsignore 排除 node_modules / 文档 / Docker 配置等，
+//      避免触发 "Asset too large (25 MiB)" 错误。
+//
+// 注意：此文件仅影响 Cloudflare 的部署，不影响 Docker / VPS 部署链路。
+// ==========================================================================
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "llmwiki",
+  "compatibility_date": "2026-06-22",
+
+  // 静态资源目录：指向仓库根目录，
+  // 配合下方 .assetsignore 排除不该上传的文件
+  "assets": {
+    "directory": "."
+  }
+}

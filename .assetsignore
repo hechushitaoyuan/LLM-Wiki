@@ -1,0 +1,56 @@
+# ==========================================================================
+# Cloudflare Wrangler 静态资源排除规则（类似 .gitignore / .dockerignore）
+# -------------------------------------------------------------------------
+# 作用：配合 wrangler.jsonc 的 assets.directory = "." 使用，
+#      告诉 Wrangler 上传仓库根目录时跳过这些非静态资源文件，
+#      从根本上避免 "Asset too large" 错误。
+# ==========================================================================
+
+# ===== 依赖（部署不需要，且含超过 25 MiB 的 workerd 二进制）=====
+node_modules/
+package.json
+package-lock.json
+bun.lockb
+optimize-images.mjs
+
+# ===== Wrangler 自身 / 构建产物 =====
+.wrangler/
+dist/
+build/
+
+# ===== Docker / CI 配置（VPS 部署用，Cloudflare 不需要）=====
+Dockerfile
+.dockerignore
+docker-compose.yml
+.github/
+
+# ===== Git / 编辑器 =====
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 文档 =====
+*.md
+
+# ===== 敏感信息（绝不能上传，双保险）=====
+*.key
+*.pem
+*.secret
+.env
+.env.*
+github-Secrets.txt
+vps*.txt
+ssh-key-*
+
+# ===== 本地打包产物 / 日志 =====
+*.zip
+*.tar.gz
+*.7z
+*.log
+__pycache__/
