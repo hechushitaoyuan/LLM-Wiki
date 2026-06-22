@@ -248,7 +248,7 @@ code {
 
 .slide-no {
   position: absolute;
-  top: 18px; left: 18px;
+  top: 18px; right: 18px;
   z-index: 2;
   background: rgba(22, 24, 33, .88);
   color: var(--accent);
@@ -310,7 +310,8 @@ code {
 .c-bad    { color: var(--bad); }
 
 .verse {
-  font-size: 1.05rem;
+  grid-column: 1 / -1;
+  font-size: 2.4rem;
   line-height: 2;
   text-align: center;
   color: var(--accent);
@@ -480,7 +481,7 @@ code {
   .card-body h3 { font-size: 1.35rem; margin-bottom: 14px; }
   .points,
   .verse { margin-top: 18px; }
-  .slide-no { top: 10px; left: 10px; }
+  .slide-no { top: 10px; right: 10px; }
 
   .footer { padding: 38px 20px; }
   .footer-brand { flex-direction: column; }

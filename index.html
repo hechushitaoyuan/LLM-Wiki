@@ -79,7 +79,7 @@
           <ul class="points">
             <li><b>从存储到理解</b>：不只保存资料，更读懂资料。</li>
             <li><b>从原料到结构</b>：自动生成摘要、实体与关联。</li>
-            <li><b>是一套框架方法论</b>，而非某项新技术。</li>
+            <li><b>是一套框架方法论</b>，并不是新的模型或者技术。</li>
           </ul>
         </div>
       </article>
@@ -106,7 +106,7 @@
           <ul class="points">
             <li><b>增量编译</b>：资料越多，知识越完整。</li>
             <li><b>规则约束</b>：用 Schema 把控产出质量。</li>
-            <li>让信息从"散落"变为"可用"。</li>
+            <li>让信息从<b>"散落的碎片"</b>变为<b>"关联的图谱"</b>。</li>
           </ul>
         </div>
       </article>
@@ -147,9 +147,9 @@
         </figure>
         <div class="card-body">
           <h3>三层架构总览</h3>
-          <p>整个体系由三层构成，数据自下而上流动，规则自上而下约束，形成一个自我进化的闭环。</p>
+          <p>整个体系由三层构成，数据自上而下流动，规则自下而上约束，形成一个自我进化的闭环。</p>
           <ul class="points">
-            <li><b class="c-raw">Raw 层</b>　原始资料（只读）</li>
+            <li><b class="c-raw">Raw 层</b>　原始资料（只读不写）</li>
             <li><b class="c-wiki">Wiki 层</b>　知识库（LLM 维护）</li>
             <li><b class="c-schema">Schema 层</b>　规则（共同维护）</li>
           </ul>
@@ -166,9 +166,9 @@
           <h3>Raw 层：原始资料的基石</h3>
           <p>知识库的地基。所有原始素材汇入此处，作为整个体系的输入源——越丰富，上层知识越可靠。</p>
           <ul class="points">
-            <li>来源：文章、论文、笔记、图片、网页、PDF。</li>
-            <li>用户自主添加，持续扩充。</li>
-            <li><b>只读保护区</b>：LLM 只读不写，保证源可信。</li>
+            <li><b>来源</b>：文章、论文、笔记、图片、网页、PDF。</li>
+            <li>用户<b>自主添加</b>，持续扩充。</li>
+            <li>LLM<b>只读不写</b>，根源牢固。</li>
           </ul>
         </div>
       </article>
@@ -201,8 +201,8 @@
           <h3>Schema 层：规则的骨架</h3>
           <p>定义知识库"长什么样"的规则层，是整个体系的骨架和目录，约束 LLM 的产出格式。</p>
           <ul class="points">
-            <li>定义目录结构与命名规范。</li>
-            <li>约定生成流程与质量标准。</li>
+            <li><b>定义</b>目录结构与命名规范。</li>
+            <li><b>约定</b>生成流程与质量标准。</li>
             <li>由 LLM 与用户<b>共同维护</b>。</li>
           </ul>
         </div>
@@ -243,11 +243,11 @@
         </figure>
         <div class="card-body">
           <h3>Ingest 摄入</h3>
-          <p>把资料"喂"进知识库的过程。每添加一份原始文件，LLM 就读取、提取、更新一次 Wiki 层。</p>
+          <p>把资料<b>"喂"</b>进知识库的过程。每添加一份原始文件，LLM 就读取、提取、更新一次 Wiki 层。</p>
           <ul class="points">
-            <li>添加文件到 raw 目录即触发。</li>
-            <li>LLM 自动提取要点并建立关联。</li>
-            <li><b>每次摄入都是一次知识迭代</b>。</li>
+            <li>添加文件到 raw 目录<b>进行编译</b>。</li>
+            <li>LLM 自动提取要点并<b>构建Wiki</b>。</li>
+            <li>每一次摄入都是一次<b>知识迭代</b>。</li>
           </ul>
         </div>
       </article>
@@ -260,11 +260,11 @@
         </figure>
         <div class="card-body">
           <h3>Query 问答</h3>
-          <p>直接在知识库上提问。LLM 基于已结构化的知识作答，无需向量数据库、无需 RAG。</p>
+          <p>用户进行提问后，LLM会在wiki层进行索引查询，深入阅读后返回综合回答，质量高的问答可以用于wiki的积累。</p>
           <ul class="points">
-            <li>提问 → LLM 索引 Wiki 层 → 综合回答。</li>
-            <li>高质量问答可反哺知识库积累。</li>
-            <li>回答有据可查，可追溯来源。</li>
+            <li>提问 → LLM <b>索引</b> Wiki 层 → 综合回答。</li>
+            <li>高质量问答还可以反哺知识库的<b>积累</b>。</li>
+            <li>回答有据可查，可快速追溯资料<b>来源</b>。</li>
           </ul>
         </div>
       </article>
@@ -279,9 +279,9 @@
           <h3>Lint 体检</h3>
           <p>定期给知识库做"健康检查"。LLM 遍历全库，发现并修复问题，输出体检报告。</p>
           <ul class="points">
-            <li>查找<b>孤立、冲突、过期</b>的内容。</li>
-            <li>通过健康度指标（HScore）量化评估。</li>
-            <li>根据反馈同步优化 Schema 规则。</li>
+            <li>查找<b>孤立、冲突、过期</b>的编译内容。</li>
+            <li>通过健康度指标对知识库<b>量化评估</b>。</li>
+            <li>根据<b>反馈结果</b>来优化 Schema 规则。</li>
           </ul>
         </div>
       </article>
@@ -293,7 +293,7 @@
   <!-- ----- 小节：为何不需要 RAG ----- -->
   <section class="sec">
     <h2 class="sec-title">S5: 为什么它不需要 RAG</h2>
-    <p class="sec-intro">传统 RAG 靠向量检索，LLM-Wiki 靠结构化加载。两种思路，带来准确度与可控性的根本差异。</p>
+    <p class="sec-intro">传统 RAG 依赖向量空间进行检索，LLM-Wiki 则是加载结构化索引。</p>
 
     <div class="cards">
       <!-- P13 -->
@@ -304,11 +304,11 @@
         </figure>
         <div class="card-body">
           <h3>不用 RAG 的原理</h3>
-          <p>传统 RAG 先检索再生成，可能丢失上下文；LLM-Wiki 直接全量加载知识库，准确度与可控性更高。</p>
+          <p>传统 RAG 先检索再生成，可能丢失上下文；LLM-Wiki 直接全量加载知识库，准确度与可控性相对更高。</p>
           <ul class="points">
             <li><b>传统 RAG</b>：检索 → 注入 → 生成（易失真）。</li>
             <li><b>LLM-Wiki</b>：全量加载 → 直接生成（更准确）。</li>
-            <li>关键在 <code>index.md</code> 与 <code>log.md</code>。</li>
+            <li>关键在 <b>index</b>（内容索引） 与 <b>log</b>（运行日志）。</li>
           </ul>
         </div>
       </article>
@@ -323,9 +323,9 @@
           <h3>index.md：知识库的门面</h3>
           <p>整个知识库的导航枢纽。每个 Wiki 页面占一行，LLM 回答问题前先读取它来定位。</p>
           <ul class="points">
-            <li>展示全库的知识结构。</li>
-            <li>通过索引快速跳转定位。</li>
-            <li>是问答检索的入口文件。</li>
+            <li>展示<b>全量库</b>的知识结构。</li>
+            <li>通过加载索引快速<b>定位</b>。</li>
+            <li>是问答检索的<b>入口</b>文件。</li>
           </ul>
         </div>
       </article>
@@ -340,9 +340,9 @@
           <h3>log.md：操作的黑匣子</h3>
           <p>按时间顺序记录每次摄入、查询、体检的操作，让知识库的变更历史可回溯。</p>
           <ul class="points">
-            <li>记录每次 Ingest / Query / Lint。</li>
-            <li>出现问题可快速定位回溯。</li>
-            <li>是知识库的"黑匣子"。</li>
+            <li><b>记录</b>每次 Ingest / Query / Lint。</li>
+            <li>出现问题可快速定位<b>回溯</b>。</li>
+            <li>是知识库的"飞机<b>黑匣子</b>"。</li>
           </ul>
         </div>
       </article>
@@ -353,8 +353,8 @@
 
   <!-- ----- 小节：对比与传统 RAG ----- -->
   <section class="sec">
-    <h2 class="sec-title">S6: 与传统 RAG 的根本差异</h2>
-    <p class="sec-intro">从知识状态到可维护性，LLM-Wiki 在每个维度都展现出不同的哲学。</p>
+    <h2 class="sec-title">S6: 与传统 RAG 的分析对比</h2>
+    <p class="sec-intro">从知识状态到可维护性，LLM-Wiki 在每个维度都展现出不同的思路。</p>
 
     <div class="cards">
       <!-- P16 -->
@@ -369,7 +369,7 @@
           <ul class="points">
             <li><b>知识状态</b>：编译型 vs 解释型。</li>
             <li><b>关联性</b>：网络链接 vs 即时检索。</li>
-            <li><b>累积效应</b>：迭代更新 vs 无积累。</li>
+            <li><b>累积效应</b>：迭代更新 vs 无法积累。</li>
             <li><b>可维护性</b>：白盒可追溯 vs 黑盒不可控。</li>
           </ul>
         </div>
@@ -382,11 +382,12 @@
           <img src="public/images/thumb/P17_核心成果的不同.webp" alt="P17 核心成果的不同" loading="lazy">
         </figure>
         <div class="card-body">
-          <h3>人机分工的智慧</h3>
-          <p>关键在于分工：把枯燥的整理维护交给 AI，人专注于提供资料与高质量提问。</p>
+          <h3>AI与人的分工协作</h3>
+          <p>把枯燥的整理维护交给 AI，用户专注于提供资料与高质量提问。</p>
           <ul class="points">
             <li><b>AI 主导</b>：提炼摘要、更新引用、保持一致、检查归档。</li>
-            <li><b>用户主导</b>：收集资料、引导方向、高质量问答、自我提升。</li>
+            <li><b>用户主导</b>：收集资料、引导方向、优质问答、自我提升。</li>
+            <li><b>互相协作</b>：各司其职，优势互补，知识共建，持续积累。</li>
           </ul>
         </div>
       </article>
@@ -411,9 +412,9 @@
           <h3>Obsidian + Web Clipper</h3>
           <p>Obsidian 是本地优先的 Markdown 笔记软件，承载整个知识库；Web Clipper 是浏览器插件，一键把网页剪藏为 Markdown，汇入 Raw 层。</p>
           <ul class="points">
-            <li>本地存储，数据完全自主可控。</li>
-            <li>网页 → 笔记的无缝衔接。</li>
-            <li>双链笔记，天然适合知识网络。</li>
+            <li><b>本地</b>存储，数据完全自主可控。</li>
+            <li>网页 → 笔记，高效快速的<b>提取</b>。</li>
+            <li>关系图谱，天然<b>适配</b>知识网络。</li>
           </ul>
         </div>
       </article>
@@ -426,11 +427,11 @@
         </figure>
         <div class="card-body">
           <h3>Node.js + OpenCode</h3>
-          <p>Node.js 提供 JavaScript 运行环境；OpenCode 是开源终端编程智能体，承担 LLM-Wiki 中"读取、提取、增量更新"的执行角色。</p>
+          <p>Node.js 提供 JavaScript 运行环境；OpenCode 是开源智能体并提供免费模型，承担 LLM-Wiki 知识库的执行角色。</p>
           <ul class="points">
-            <li>为 LLM-Wiki 提供本地运行底座。</li>
-            <li>无需云端依赖，全流程本地完成。</li>
-            <li>开源免费，可自由定制。</li>
+            <li>为 LLM-Wiki 提供<b>运行环境</b>。</li>
+            <li>开源的项目，支持<b>自由定制</b></li>
+            <li>免费的模型，适合<b>基础体验</b>。</li>
           </ul>
         </div>
       </article>
@@ -443,11 +444,11 @@
         </figure>
         <div class="card-body">
           <h3>LLM-Wiki 桌面端</h3>
-          <p>把命令行方案封装为图形化桌面应用，让不熟悉终端的用户也能一键完成摄入、问答与体检。</p>
+          <p>把命令行方案封装为图形化桌面应用，让不熟悉终端的用户也能快速完成摄入、问答与体检。</p>
           <ul class="points">
-            <li>一键启动，无需命令行配置。</li>
-            <li>本地优先，数据存储在本地。</li>
-            <li>大幅降低上手门槛。</li>
+            <li>桌面客户端，无需<b>命令行</b>操作。</li>
+            <li>自动化运行，更为友好的<b>交互</b>。</li>
+            <li><b>缺点</b>则是没有免费的LLM模型。</li>
           </ul>
         </div>
       </article>
@@ -463,8 +464,8 @@
           <p>三件套组成本地 LLM 工作流闭环，适配从日常使用到保密场景的不同需求。</p>
           <ul class="points">
             <li><b>Qoder</b>：智能体执行软件，自带知识库，有免费额度。</li>
-            <li><b>Ollama</b>：本地大模型引擎，纯内网，适合保密信息。</li>
-            <li><b>Fast-Note-Sync</b>：搭配 VPS 与域名，跨设备私有云同步。</li>
+            <li><b>Ollama</b>：本地大模型引擎，内网环境，适合保密信息。</li>
+            <li><b>Fast-Note-Sync</b>：跨设备私有云同步，Web端管理编辑。</li>
           </ul>
         </div>
       </article>
@@ -475,7 +476,7 @@
 
   <!-- ----- 小节：边界与升华 ----- -->
   <section class="sec">
-    <h2 class="sec-title">S8: 边界、适用与升华</h2>
+    <h2 class="sec-title">S8: 总结、分享与致谢</h2>
     <p class="sec-intro">再好的方法也有边界。知道它适合什么、不适合什么，才能真正用好它。</p>
 
     <div class="cards">
@@ -489,9 +490,9 @@
           <h3>限制与适用场景</h3>
           <p>LLM-Wiki 依赖高质量、相对稳定的原始资料，因此更适合专题研究而非日常碎记。</p>
           <ul class="points">
-            <li><b class="c-good">✓ 适合</b>：论文、规范、书籍、审查意见等专题资料。</li>
-            <li><b class="c-bad">✗ 不适合</b>：碎片化笔记、多方向日记、频繁变动数据。</li>
-            <li>核心判断：能否形成<b>互相关联的知识网络</b>。</li>
+            <li><b class="c-good">✓ 适合</b>：论文、规范、书籍、审查意见等专题类资料。</li>
+            <li><b class="c-bad">✗ 不适合</b>：碎片化笔记、工作日记、频繁变动的数据。</li>
+            <li>核心判断：知识库的数据能否形成<b>关联</b>的结构化网络。</li>
           </ul>
         </div>
       </article>
@@ -504,11 +505,11 @@
         </figure>
         <div class="card-body">
           <h3>「道」与「术」</h3>
-          <p>道是客观存在的规律与法则，术是实际实践的方法与技巧。学技术，更要有学习 AI 的心态。</p>
+          <p>道是客观存在的规律与法则，术是实际实践的方法与技巧。学 AI 技术，更要有学习 AI 的想法。</p>
           <ul class="points">
-            <li>年初 AI 专班<b>张峥</b>院长分享的见解。</li>
-            <li>个人知识库是<b>定制化、不受限、可发散</b>的。</li>
-            <li>想买都买不到，却能随时迁移与扩展。</li>
+            <li>AI 专班<b>张峥</b>院长1月19日专班会议分享的见解。</li>
+            <li>人类驱动使用 AI 技术→人类与 AI 的<b>共同协作</b>。</li>
+            <li><b>定制化、不受限、可发散</b>的个人知识库很重要。</li>
           </ul>
         </div>
       </article>
@@ -520,12 +521,11 @@
           <img src="public/images/thumb/P24_最终致谢.webp" alt="P24 致谢" loading="lazy">
         </figure>
         <div class="card-body">
-          <h3>致谢</h3>
-          <p>感谢 Karpathy 的启发，感谢开源社区与工具开发者，感谢各位的聆听。</p>
+          <li>6月5日接到开课的任务，感谢AI专班组长<b>杜明</b>的鼓励与肯定。</li>
+          <li>2023年3月9日，<b>水思源QQ机器人</b>：自工技起源~于未来迭代~</li>
           <blockquote class="verse">
-            谢谢聆听
+            感谢来捧场的各位同事
           </blockquote>
-          <p>也感谢专班组长<b>杜明</b>的鼓励，以及自己学习 AI 的初心。</p>
         </div>
       </article>
     </div>
