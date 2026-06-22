@@ -261,23 +261,30 @@ code {
   backdrop-filter: blur(4px);
 }
 
-/* 下方文字区：桌面端将摘要与要点并排，控制信息密度 */
+/* 下方文字区：桌面端用 grid 双列，行1只取标题高度、行2占剩余空间，
+   配合 points 跨行，从根本上消除「h3 被右侧撑高留白」的问题 */
 .card-body {
   padding: 32px 40px 38px;
   display: grid;
   grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  grid-template-rows: auto 1fr;   /* 关键：行1=标题高度，行2=剩余空间 */
   column-gap: 48px;
   align-items: start;
   min-height: 230px;
 }
+/* 标题固定在左上格（行1列1），行1高度只由它决定，不再被 points 撑高 */
 .card-body h3 {
-  grid-column: 1 / -1;
+  grid-column: 1;
+  grid-row: 1;
   font-size: 1.55rem;
   font-weight: 800;
   margin-bottom: 20px;
   line-height: 1.4;
 }
+/* 段落固定在左下格（行2列1），紧贴标题下方，无留白 */
 .card-body > p {
+  grid-column: 1;
+  grid-row: 2;
   color: var(--text-soft);
   font-size: 1rem;
   margin-bottom: 0;
@@ -285,7 +292,13 @@ code {
 }
 .card-body > p:last-child { margin-bottom: 0; }
 
-.points { list-style: none; margin: 0; }
+/* 要点独占右列、跨全部行，从标题同一行（右上角）开始向下排列 */
+.points {
+  list-style: none;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1 / -1;
+}
 .points li {
   position: relative;
   padding: 6px 0 6px 22px;
@@ -473,11 +486,16 @@ code {
   .cards { gap: 34px; }
   .card-body {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;   /* 单列布局，行高自适应 */
     row-gap: 0;
     min-height: 0;
     padding: 24px 24px 28px;
   }
-  .card-body > * { grid-column: 1 / -1; }
+  /* 窄屏：强制垂直顺序 h3 → p → points，覆盖桌面端的跨行/跨列规则 */
+  .card-body > * { grid-column: 1; grid-row: auto; }
+  .card-body h3 { order: 1; }
+  .card-body > p { order: 2; }
+  .card-body > .points { order: 3; }
   .card-body h3 { font-size: 1.35rem; margin-bottom: 14px; }
   .points,
   .verse { margin-top: 18px; }
